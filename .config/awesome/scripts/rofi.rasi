@@ -27,7 +27,7 @@ window {
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @selected;
-    background-color:            @background;
+    background-color:            black / 40%;
     cursor:                      "default";
 }
 
@@ -57,12 +57,12 @@ inputbar {
     text-color:                  @foreground;
     children:                    [ "prompt", "entry" ];
 }
-
 prompt {
     enabled:                     true;
-    background-color:            inherit;
+    background-color:            transparent;
     text-color:                  inherit;
 }
+
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
