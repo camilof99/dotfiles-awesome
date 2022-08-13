@@ -426,6 +426,17 @@ end)
 
 awful.keyboard.append_global_keybindings({
 
+    --- Music
+    awful.key({ modkey, "Shift" }, "P", function()
+		playerctl_daemon:play_pause()
+	end, { description = "play pause music", group = "hotkeys" }),
+	awful.key({}, "XF86AudioPrev", function()
+		playerctl_daemon:previous()
+	end, { description = "previous music", group = "hotkeys" }),
+	awful.key({}, "XF86AudioNext", function()
+		playerctl_daemon:next()
+	end, { description = "next music", group = "hotkeys" }),
+
     awful.key({ modkey, "Shift" }, "Up", function() volume_widget:inc(5) end),
     awful.key({ modkey, "Shift" }, "Down", function() volume_widget:dec(5) end),
     awful.key({ modkey }, "\\", function() volume_widget:toggle() end),
@@ -461,6 +472,10 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Control" }, "p", function()
         awful.spawn.with_shell(apps.default.picom_kill)
     end, { description = "status picom", group = "launcher" }),
+
+    awful.key({ modkey, "Shift" }, "x", function()
+        awful.spawn(apps.default.color_picker)
+    end, { description = "color picker", group = "launcher" }),
 })
 
 -- Tags related keybindings
