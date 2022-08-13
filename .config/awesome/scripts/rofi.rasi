@@ -27,7 +27,7 @@ window {
     border:                      0px solid;
     border-radius:               10px;
     border-color:                @selected;
-    background-color:            black / 40%;
+    background-color:            black / 50%;
     cursor:                      "default";
 }
 
