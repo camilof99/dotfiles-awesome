@@ -3,6 +3,7 @@ local config_dir = filesystem.get_configuration_dir()
 local utils_dir = config_dir .. "utilities/"
 
 -- Credits rxyhn
+
 return {
 	--- Default Applications
 	default = {

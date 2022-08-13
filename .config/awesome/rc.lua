@@ -1,19 +1,12 @@
--- awesome_mode: api-level=4:screen=on
--- If LuaRocks is installed, make sure that packages installed through it are
--- found (e.g. lgi). If LuaRocks is not installed, do nothing.
+
 pcall(require, "luarocks.loader")
 
--- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
--- Widget and layout library
 local wibox = require("wibox")
--- Theme handling library
 local beautiful = require("beautiful")
--- Notification library
 local naughty = require("naughty")
--- Declarative object management
 local ruled = require("ruled")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
@@ -27,14 +20,8 @@ local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 
---local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
--- Enable hotkeys help widget for VIM and other apps
--- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
         urgency = "critical",
@@ -44,34 +31,15 @@ naughty.connect_signal("request::display_error", function(message, startup)
 end)
 -- }}}
 
--- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "mytheme.lua")
 
--- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = os.getenv("EDITOR") or "nano"
-editor_cmd = terminal .. " -e " .. editor
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
--- }}}
 
 --mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 --                                     menu = mymainmenu })
-mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir() .. "icon-hulk2.png",  command = "rofi -show drun -show-icons" })
+mylauncher = awful.widget.launcher({ image = gears.filesystem.get_configuration_dir() .. "icon-hulk2.png",  command = "rofi -no-lazy-grab -show drun -modi drun -theme " .. gears.filesystem.get_configuration_dir() .. "scripts/rofi.rasi" })
 
--- Menubar configuration
-menubar.utils.terminal = terminal -- Set the terminal for applications that require it
--- }}}
-
--- {{{ Tag layout
--- Table of layouts to cover with awful.layout.inc, order matters.
 tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
         awful.layout.suit.tile,
@@ -89,9 +57,7 @@ tag.connect_signal("request::default_layouts", function()
         awful.layout.suit.corner.nw,
     })
 end)
--- }}}
 
--- {{{ Wallpaper
 screen.connect_signal("request::wallpaper", function(s)
     awful.wallpaper {
         screen = s,
@@ -109,14 +75,9 @@ screen.connect_signal("request::wallpaper", function(s)
         }
     }
 end)
--- }}}
 
--- {{{ Wibar
-
--- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
--- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -166,7 +127,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
     }
 
-    -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist {
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
@@ -280,7 +240,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
     myvolumecontainer1 = wibox.container.margin (container2, 0, 0, 1.5, 1.5)
     myspeedcontainer = wibox.container.margin (container, 1.5, 0, 1.5, 1.5)
 
-
     -- Create the wibox
     --s.mywibox = awful.wibar {
     --    position = "top",
@@ -323,8 +282,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 layout = wibox.layout.fixed.horizontal,
                 mylaunchercontainer
             },
-            --s.mytasklist, -- Middle widget
-            --mytaglistcontainer,
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal
             }
@@ -347,13 +304,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
         align    = "left",
         widget   = {
             layout = wibox.layout.align.horizontal,
-            { -- Left widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
             },
-            --s.mytasklist, -- Middle widget
-            --mytaglistcontainer,
             mytaglistcontainer,
-            { -- Right widgets
+            {
                 layout = wibox.layout.fixed.horizontal
             },
         },
@@ -395,14 +350,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         align    = "right",
         widget   = {
             layout = wibox.layout.align.horizontal,
-            { -- Left widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
                 clockcontainer,
             },
-            --s.mytasklist, -- Middle widget
             layout = wibox.layout.fixed.horizontal,
             mylayoutcontainer2,
-            { -- Right widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
                 mylayoutcontainer1,
             },
@@ -425,15 +379,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
         align    = "right",
         widget   = {
             layout = wibox.layout.align.horizontal,
-            { -- Left widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
-                --netcontainer
             },
-            --s.mytasklist, -- Middle widget
-            --clock,
             layout = wibox.layout.fixed.horizontal,
             myspeedcontainer,
-            { -- Right widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
                 myvolumecontainer1
             }
@@ -456,18 +407,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         align    = "right",
         widget   = {
             layout = wibox.layout.align.horizontal,
-            { -- Left widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
-                --wibox.widget.systray()
-                --myspeedcontainer
             },
-            --s.mytasklist, -- Middle widget
-            --clock,
             layout = wibox.layout.fixed.horizontal,
             systray,
-            { -- Right widgets
+            {
                 layout = wibox.layout.fixed.horizontal,
-                -- customized
             }
         }
     }
@@ -475,18 +421,9 @@ end)
 
 -- }}}
 
--- {{{ Mouse bindings
---awful.mouse.append_global_mousebindings({
---    awful.button({ }, 3, function () mymainmenu:toggle() end),
---    awful.button({ }, 4, awful.tag.viewprev),
---    awful.button({ }, 5, awful.tag.viewnext),
---})
--- }}}
-
 -- {{{ Key bindings
-
-
 -- General Awesome keys
+
 awful.keyboard.append_global_keybindings({
 
     awful.key({ modkey, "Shift" }, "Up", function() volume_widget:inc(5) end),
@@ -498,45 +435,32 @@ awful.keyboard.append_global_keybindings({
     awful.key({}, "Print",     function () awful.spawn("flameshot gui") end ),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    --awful.key({ modkey,           }, "w", function () mymainmenu:show() end,
-              --{description = "show main menu", group = "awesome"}),
+
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
+
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run {
-                    prompt       = "Run Lua code: ",
-                    textbox      = awful.screen.focused().mypromptbox.widget,
-                    exe_callback = awful.util.eval,
-                    history_path = awful.util.get_cache_dir() .. "/history_eval"
-                  }
-              end,
-              {description = "lua execute prompt", group = "awesome"}),
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
 
-            awful.key({ modkey }, "Return", function ()
-                awful.spawn(apps.default.terminal)
-            end, {description = "open a terminal", group = "launcher"}),
+    awful.key({ modkey }, "Return", function () 
+        awful.spawn(apps.default.terminal)
+    end, {description = "open a terminal", group = "launcher"}),
 
-            awful.key({ modkey }, "f", function()
-                awful.spawn(apps.default.web_browser)
-            end, { description = "open web browser", group = "launcher" }),
+    awful.key({ modkey }, "f", function()
+        awful.spawn(apps.default.web_browser)
+    end, { description = "open web browser", group = "launcher" }),
 
-            awful.key({ modkey }, "v", function()
-                awful.spawn(apps.default.code_editor)
-            end, { description = "open code", group = "launcher" }),
+    awful.key({ modkey }, "v", function()
+        awful.spawn(apps.default.code_editor)
+    end, { description = "open code", group = "launcher" }),
 
-            awful.key({ modkey }, "d", function()
-                awful.spawn(apps.default.app_launcher)
-            end, { description = "open rofi", group = "launcher" }),
-            awful.key({ modkey, "Control" }, "p", function()
-                awful.spawn.with_shell(apps.default.picom_kill)
-            end, { description = "status picom", group = "launcher" }),
+    awful.key({ modkey }, "d", function()
+        awful.spawn(apps.default.app_launcher)
+    end, { description = "open rofi", group = "launcher" }),
+
+    awful.key({ modkey, "Control" }, "p", function()
+        awful.spawn.with_shell(apps.default.picom_kill)
+    end, { description = "status picom", group = "launcher" }),
 })
 
 -- Tags related keybindings
@@ -611,7 +535,6 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 })
-
 
 awful.keyboard.append_global_keybindings({
     awful.key {
@@ -789,14 +712,14 @@ ruled.client.connect_signal("request::rules", function()
         properties = { titlebars_enabled = true      }
     }
 
-    ruled.client.append_rule {
-        rule_any    = {
-            class = {apps.default.terminal}
-        },
-        properties = {
-            tag = screen[1].tags[2],
-        },
-    }
+    --ruled.client.append_rule {
+    --    rule_any    = {
+    --        class = {apps.default.terminal}
+    --    },
+    --    properties = {
+    --        tag = screen[1].tags[2],
+    --    },
+    --}
 
 end)
 
