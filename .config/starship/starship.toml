@@ -1,9 +1,7 @@
 format = """
 [](#818181)\
 [ ](fg:#000000 bg:#818181)\
-[\uE0BA](fg:#3a454e bg:#818181)\
- $username\
-[\uE0BA](fg:#6f282e bg:#3a454e)\
+[\uE0BA](fg:#6f282e bg:#818181)\
 $directory\
 [\uE0BA](fg:#3a454e bg:#6f282e)\
 $git_branch\
@@ -21,16 +19,34 @@ $rust\
 [](fg:#86BBD8 bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#2a3e63)\
-$time\
-[\uE0C0  ](fg:#2a3e63)\
+[\uE0C0 ](fg:#2a3e63)\
+$character\
 """
-
+#$time\
+#$username\
+#[\uE0BA](fg:#6f282e bg:#3a454e)\
 #$git_status\
 
-# Disable the blank line at the start of the prompt
 add_newline = true
+right_format = "$cmd_duration"
 
-# You can also replace your username with a neat symbol like  to save some space
+[character]
+success_symbol = "[ ](#395385)"
+error_symbol = " [](#df5b61)"
+vicmd_symbol = "[  ](#78b892)"
+
+[cmd_duration]
+min_time = 1
+format = """
+[](fg:#818181 bg:none)
+[$duration]($style)
+[](fg:#818181 bg:#818181)
+[](fg:#2a3e63 bg:#818181)
+[](fg:#000000 bg:#2a3e63)
+[](fg:#2a3e63 bg:none) """
+disabled = false
+style = "fg:#000000 bg:#818181"
+
 [username]
 show_always = true
 style_user = "bg:#3a454e"
@@ -43,18 +59,14 @@ format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
 [directory.substitutions]
 "Documents" = " "
+"Documentos" = " "
 "Downloads" = " "
+"Descargas" = " "
 "Music" = " "
 "Pictures" = " "
-# Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
+"Imágenes" = " "
 
 [c]
 symbol = " "
