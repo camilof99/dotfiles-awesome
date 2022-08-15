@@ -427,15 +427,21 @@ end)
 awful.keyboard.append_global_keybindings({
 
     --- Music
-    awful.key({ modkey, "Shift" }, "P", function()
-		playerctl_daemon:play_pause()
-	end, { description = "play pause music", group = "hotkeys" }),
-	awful.key({}, "XF86AudioPrev", function()
-		playerctl_daemon:previous()
-	end, { description = "previous music", group = "hotkeys" }),
-	awful.key({}, "XF86AudioNext", function()
-		playerctl_daemon:next()
-	end, { description = "next music", group = "hotkeys" }),
+    awful.key({ modkey, "Shift" }, "p", function()
+		awful.spawn.with_shell('mpc pause')
+	end, { description = "Pause music", group = "Música" }),
+	awful.key({ modkey, "Shift" }, "o", function()
+		awful.spawn.with_shell('mpc play')
+	end, { description = "Play music", group = "Música" }),
+    awful.key({ modkey, "Shift" }, "s", function()
+		awful.spawn.with_shell('mpc stop')
+	end, { description = "Stop music", group = "Música" }),
+	awful.key({ modkey, "Shift" }, "Left", function()
+		awful.spawn.with_shell('mpc prev')
+	end, { description = "Previous music", group = "Música" }),
+    awful.key({ modkey, "Shift" }, "Right", function()
+		awful.spawn.with_shell('mpc next')
+	end, { description = "next music", group = "Música" }),
 
     awful.key({ modkey, "Shift" }, "Up", function() volume_widget:inc(5) end),
     awful.key({ modkey, "Shift" }, "Down", function() volume_widget:dec(5) end),
@@ -453,7 +459,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    awful.key({ modkey }, "Return", function () 
+    awful.key({ modkey }, "Return", function ()
         awful.spawn(apps.default.terminal)
     end, {description = "open a terminal", group = "launcher"}),
 
