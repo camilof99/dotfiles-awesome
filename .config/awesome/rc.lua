@@ -264,7 +264,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     --}
     s.mywibox0 = awful.wibar {
         position = "top",
-        screen   = screen[s],
+        visible = true,
         stretch  = false,
         width    = 40,
         bg = "#061A23",
@@ -290,7 +290,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     s.mywibox1 = awful.wibar {
         position = "top",
-        screen   = screen[s],
+        visible = true,
         stretch  = false,
         width    = 244,
         bg = "#061A23",
@@ -316,7 +316,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     s.mywibox2 = awful.wibar {
         position = "top",
-        screen   = screen[s],
+        visible = true,
         stretch  = false,
         bg = "#061A23",
         border_color = colors.color3,
@@ -336,7 +336,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     s.mywibox3 = awful.wibar {
         position = "top",
-        screen   = screen[s],
+        visible = true,
         stretch  = false,
         width    = 116,
         bg = "#061A23",
@@ -365,7 +365,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     s.mywibox4 = awful.wibar {
         position = "top",
-        screen   = screen[s],
+        visible = true,
         stretch  = false,
         width    = 192,
         bg = "#061A23",
@@ -392,8 +392,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
     }
     s.mywibox5 = awful.wibar {
         position = "top",
-        screen   = screen[s],
-        --visible = false,
+        visible = false,
         stretch  = false,
         width    = 100,
         bg = "#061A23",
@@ -491,16 +490,15 @@ awful.keyboard.append_global_keybindings({
         awful.spawn(apps.default.file_manager)
     end, { description = "File Manager", group = "launcher" }),
 
-    --awful.key({ modkey }, "b", function ()
-    --    for s in screen do
-    --        s.mywibox5.visible = not s.mywibox5.visible
-    --        if s.mybottomwibox then
-    --            s.mybottomwibox.visible = not s.mybottomwibox.visible
-    --        end
-    --   end
-    --end,
-    --{description = "Ocultar apps segundo plano.", group = "awesome"}),
-
+    awful.key({ modkey }, "b", function ()
+        for s in screen do
+            s.mywibox5.visible = not s.mywibox5.visible
+            if s.mybottomwibox then
+                s.mybottomwibox.visible = not s.mybottomwibox.visible
+            end
+       end
+    end,
+    { description = "Ocultar apps segundo plano.", group = "awesome" }),
 
 })
 
