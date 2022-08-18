@@ -31,7 +31,7 @@ add_newline = true
 right_format = "$cmd_duration"
 
 [character]
-success_symbol = "[ ](#395385)"
+success_symbol = "[](#395385)"
 error_symbol = " [](#df5b61)"
 vicmd_symbol = "[  ](#78b892)"
 
@@ -56,7 +56,7 @@ format = '[ $user ]($style)'
 [directory]
 style = "bg:#6f282e"
 format = "[ $path ]($style)"
-truncation_length = 3
+truncation_length = 2
 truncation_symbol = "…/"
 
 [directory.substitutions]
