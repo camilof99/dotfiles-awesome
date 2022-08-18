@@ -13,6 +13,7 @@ return {
 		file_manager = "nautilus",
 		app_launcher = "rofi -no-lazy-grab -show drun -modi drun -theme " .. config_dir .. "scripts/rofi.rasi",
 		color_picker =  "xcolor -s --scale 6 --preview-size 115",
+		telegram = "telegram-desktop",
 	},
 
 }
