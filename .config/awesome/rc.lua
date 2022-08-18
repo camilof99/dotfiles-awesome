@@ -299,7 +299,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -18,
-            left = 66,
+            left = 62,
         },
         align    = "left",
         widget   = {
@@ -325,7 +325,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -48,
-            left = -598,
+            left = -616,
         },
         align    = "center",
         widget   = {
@@ -374,7 +374,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -108,
-            right = 142
+            right = 138
         },
         align    = "right",
         widget   = {
@@ -402,7 +402,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -138,
-            right = 346
+            right = 338
         },
         align    = "right",
         widget   = {
@@ -463,7 +463,7 @@ awful.keyboard.append_global_keybindings({
         awful.spawn(apps.default.terminal)
     end, {description = "open a terminal", group = "launcher"}),
 
-    awful.key({ modkey }, "f", function()
+    awful.key({ modkey }, "e", function()
         awful.spawn(apps.default.web_browser)
     end, { description = "open web browser", group = "launcher" }),
 
@@ -482,6 +482,26 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift" }, "x", function()
         awful.spawn(apps.default.color_picker)
     end, { description = "color picker", group = "launcher" }),
+
+    awful.key({ modkey }, "t", function()
+        awful.spawn(apps.default.telegram)
+    end, { description = "Telegram", group = "launcher" }),
+
+    awful.key({ modkey }, "f", function()
+        awful.spawn(apps.default.file_manager)
+    end, { description = "File Manager", group = "launcher" }),
+
+    --awful.key({ modkey }, "b", function ()
+    --    for s in screen do
+    --        s.mywibox5.visible = not s.mywibox5.visible
+    --        if s.mybottomwibox then
+    --            s.mybottomwibox.visible = not s.mybottomwibox.visible
+    --        end
+    --   end
+    --end,
+    --{description = "Ocultar apps segundo plano.", group = "awesome"}),
+
+
 })
 
 -- Tags related keybindings
