@@ -1,5 +1,8 @@
+#!/bin/sh
 #!/usr/bin/env bash
-# .scripts/awesome/autostart.sh
+#!/usr/bin/python
+#!/bin/env bash
+
 # Launch Apps when AwesomeWM starts.
 
 function run {
@@ -18,16 +21,15 @@ run ~/.scripts/awesome/awe#!/usr/bin/env bash
 
 # Policy kit (needed for GUI apps to ask for password)
 run /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# xrandr layout for AwesomeWM
-run ~/.scripts/awesome/awesome_display_layout.sh &
+
 # sxhkd Hotkeys
 #run sxhkd &
 # Start compositor
 picom &
-# pywal
-wal -R &
 # Nitrogen wallpaper
 run nitrogen --restore &
+# pywal
+wal -R &
 # Start Volume Control applet
 run volctl &
 # Start Network Manager Applet
@@ -36,33 +38,19 @@ run nm-applet &
 run numlockx &
 # Start Guake terminal
 run guake &
-# Screensaver
-run xscreensaver -no-splash &
 # Greenclip for Rofi
 run greenclip daemon &
 # Pamac system update notifications
 run pamac-tray &
-# Start Dropbox
-run dropbox &
-# Bluetooth
-run blueman-tray &
-# MPD
-run mpd ~/.config/mpd/mpd.conf &
 # Unclutter - (hides mouse pointer after 5 seconds of inactivity)
 run unclutter &
 # Start Volume Control applet
 run volctl &
 # Start Guake terminal
 run guake &
-# Screensaver
-run xscreensaver -no-splash &
 # Greenclip for Rofi
 run greenclip daemon &
 # Pamac system update notifications
 run pamac-tray &
-# Start Dropbox
-run dropbox &
-# Bluetooth
-run blueman-tray &
 # MPD
 run mpd ~/.config/mpd/mpd.conf &

@@ -14,6 +14,8 @@ return {
 		app_launcher = "rofi -no-lazy-grab -show drun -modi drun -theme " .. config_dir .. "scripts/rofi.rasi",
 		color_picker =  "xcolor -s --scale 6 --preview-size 115",
 		telegram = "telegram-desktop",
+		picom_kill = "~/.config/awesome/scripts/toggle_picom.sh",
+		wallpaper = "~/.config/awesome/scripts/wallpaper.sh",
 	},
 
 }

@@ -9,7 +9,17 @@ local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popu
 
 require("awful.hotkeys_popup.keys")
 
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local apps = require("configuration.apps")
+
+client.connect_signal(
+  "manage",
+  function(c)
+      if c.first_tag.index == 7 then
+        c.floating = true
+      end
+  end
+)
 
 awful.keyboard.append_global_keybindings({
 
@@ -64,6 +74,11 @@ awful.keyboard.append_global_keybindings({
         awful.spawn(apps.default.app_launcher)
     end, { description = "open rofi", group = "launcher" }),
 
+    awful.key({ modkey, 'Control' }, 'w', function()
+        awful.spawn.easy_async_with_shell(apps.default.wallpaper,
+        function(output) end)
+    end),
+
     awful.key({ modkey, "Control" }, "p", function()
         awful.spawn.with_shell(apps.default.picom_kill)
     end, { description = "status picom", group = "launcher" }),
@@ -81,7 +96,7 @@ awful.keyboard.append_global_keybindings({
     end, { description = "File Manager", group = "launcher" }),
 
     -- Hide wibar 5
-    awful.key({ modkey }, "b", function ()
+    awful.key({ modkey, "Shift" }, "b", function ()
         for s in screen do
             s.mywibox5.visible = not s.mywibox5.visible
             if s.mybottomwibox then

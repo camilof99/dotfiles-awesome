@@ -10,7 +10,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 
 
-local xcolors = require("colors")
+local xcolors = require("scripts/colors")
 local colors = xcolors.get_current_theme()
 
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
