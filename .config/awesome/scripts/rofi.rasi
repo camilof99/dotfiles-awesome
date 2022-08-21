@@ -17,8 +17,8 @@ window {
     anchor:                      west;
     fullscreen:                  false;
     width:                       400;
-    x-offset:                    12px;
-    y-offset:                    -100px;
+    x-offset:                    15px;
+    y-offset:                    -93px;
 
     enabled:                     true;
     margin:                      0px;

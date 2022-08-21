@@ -96,7 +96,7 @@ awful.keyboard.append_global_keybindings({
     end, { description = "File Manager", group = "launcher" }),
 
     -- Hide wibar 5
-    awful.key({ modkey, "Shift" }, "b", function ()
+    awful.key({ modkey }, "b", function ()
         for s in screen do
             s.mywibox5.visible = not s.mywibox5.visible
             if s.mybottomwibox then
