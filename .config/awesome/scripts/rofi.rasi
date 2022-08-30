@@ -17,13 +17,13 @@ window {
     anchor:                      west;
     fullscreen:                  false;
     width:                       400;
-    x-offset:                    15px;
+    x-offset:                    12px;
     y-offset:                    -93px;
 
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
+    border:                      2px solid;
     border-radius:               10px;
     border-color:                @selected;
     background-color:            black / 50%;
