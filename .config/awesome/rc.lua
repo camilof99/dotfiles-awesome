@@ -265,7 +265,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         position = "top",
         visible = true,
         stretch  = false,
-        width    = 244,
+        width    = 236,
         bg = "#061A23",
         border_color = colors.color3,
         border_width = 1,
@@ -298,9 +298,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         height = 30,
         margins = {
             top = -48,
-            left = -616,
+            left = 306,
         },
-        align    = "center",
+        align    = "left",
         widget   = {
             align  = "center",
             widget = mytasklistcontainer
