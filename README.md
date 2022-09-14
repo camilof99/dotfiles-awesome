@@ -52,6 +52,10 @@
   ```
   paru -S neofetch
   ```
+* Nitrogen
+  ```
+  paru -S nitrogen
+  ```
 * MPD and Ncmpcpp
   ```
   paru -S ncmpcpp mpv mpd mpc 
@@ -83,9 +87,22 @@
  ```
   reboot
  ```
-**I hope you enjoy :)**
+**Note:**
 
-**If there are errors, report them <a href="https://t.me/Ca_milo99">here</a>**.
+* To change the wallpaper and generate the colors automatically, I use Nitrogen and Pywal.
+  * Choose your wallpaper with Nitrogen
+  * Later:
+```
+  cd .config/awesome/scripts
+  ./generate-colors.sh
+  Later keyboard ctrl + r
+```
+
+* To see the keyboard shortcuts press super + s // Feel free to change them
+
+***I hope you enjoy :)***
+
+***If there are errors, report them <a href="https://t.me/Ca_milo99">here</a>.***
 
 
 ## Credits
