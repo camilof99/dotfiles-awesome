@@ -59,7 +59,7 @@
   systemctl --user start mpd.service
   ```
 * Neofetch~/.fonts or ~/.local/share/fonts
-  * Download Zip Hack Nerd Font <a href="https://www.nerdfonts.com/font-downloads">here</a>
+  * Download zip Hack Nerd Font <a href="https://www.nerdfonts.com/font-downloads">here</a>
   ```
   unzip Hack.zip
   cp Hack.zip ~/.fonts or ~/.local/share/fonts
@@ -71,8 +71,15 @@
   git clone https://github.com/camilof99/dotfiles-awesome
  ```
  ```
-  git clone https://github.com/camilof99/dotfiles-awesome
+  cd dotfiles-awesome
+  cp .zshrc /home/'youUser'
+  cp -r config/* ~/.config/
  ```
+ ```
+  reboot
+ ```
+**I hope you enjoy :)**
+**If there are errors, report them <a href="https://t.me/Ca_milo99">here</a>**.
 
 
 ### Credits
