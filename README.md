@@ -5,25 +5,77 @@
 
 ## My rice :3
 
-* **Window Manager** • AwesomeWM
-* **Shell** • Zsh
-* **Terminal** • Kitty
+* **Window Manager** • <a href="https://github.com/awesomeWM/awesome">AwesomeWM</a>
+* **Shell** • Zsh 
+* **Terminal** • <a href="https://github.com/kovidgoyal/kitty">Kitty</a> 
 * **Bar** • Wibar
-* **Compositor** • Picom
+* **Compositor** • <a href="https://github.com/ibhagwan/picom-ibhagwan-git">Picom</a> 
 * **Launcher** • Rofi
-* **Generator Colors** • Pywal
+* **Generator Colors** • <a href="https://github.com/dylanaraps/pywal">Pywal</a> 
 
 ### Dependencias
 
-**Install**
+**Install:**
 * AwesomeWM
-* Picom (picom-ibhagwan-git)
+  ```
+  paru -S awesome-git
+  ```
+* Picom
+  ```
+  paru -S picom-ibhagwan-git
+  ```
 * Kitty
-* ZSH
-* Rofi
-* Otras dependencias que no recuerdo (Iré actualizando :).
+  ```
+  paru -S kitty
+  ```
+* ZSH and dependencies
+  ```
+  paru -S zsh
+  paru -S zsh-syntax-highlighting
+  paru -S zsh-autosuggestions
+  ```
+  ```
+  pacman -S starship
+  ```
+  ```
+  cd /usr/share
+  sudo su
+  mkdir zsh-sudo
+  chown 'youUser' zsh-sudo/
+  wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+  ```
+* Rofi (Credits to <a href="https://github.com/adi1090x/rofi">adi1090x</a>  for the theme)
+  ```
+  sudo pacman -S rofi
+  ```
+* Neofetch
+  ```
+  paru -S neofetch
+  ```
+* MPD and Ncmpcpp
+  ```
+  paru -S ncmpcpp mpv mpd mpc 
+  systemctl --user enable mpd.service
+  systemctl --user start mpd.service
+  ```
+* Neofetch~/.fonts or ~/.local/share/fonts
+  * Download Zip Hack Nerd Font <a href="https://www.nerdfonts.com/font-downloads">here</a>
+  ```
+  unzip Hack.zip
+  cp Hack.zip ~/.fonts or ~/.local/share/fonts
+  fc-cache -fv
+  ```
+ 
+**Later:**
+ ```
+  git clone https://github.com/camilof99/dotfiles-awesome
+ ```
+ ```
+  git clone https://github.com/camilof99/dotfiles-awesome
+ ```
 
-### Agredecimientos
 
-* A la comunidad de r/unixporn.
-* Al grupo de Arch Linux (Telegram).
+### Credits
+
+* To the reddit community of <a href="https://www.reddit.com/r/unixporn/">r/unixporn.</a>
+* To the Arch Linux group (Telegram.
