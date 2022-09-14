@@ -76,6 +76,11 @@
   cp -r config/* ~/.config/
  ```
  ```
+  cd .config/awesome
+  git clone https://github.com/streetturtle/awesome-wm-widgets
+  git clone https://github.com/streetturtle/awesome-buttons
+ ```
+ ```
   reboot
  ```
 **I hope you enjoy :)**
@@ -86,4 +91,4 @@
 ## Credits
 
 * To the reddit community of <a href="https://www.reddit.com/r/unixporn/">r/unixporn.</a>
-* To the Arch Linux group (Telegram.
+* To the Arch Linux group (Telegram).
