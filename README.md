@@ -13,7 +13,7 @@
 * **Launcher** • Rofi
 * **Generator Colors** • <a href="https://github.com/dylanaraps/pywal">Pywal</a> 
 
-### Dependencias
+## Dependencies
 
 **Install:**
 * AwesomeWM
@@ -83,7 +83,7 @@
 **If there are errors, report them <a href="https://t.me/Ca_milo99">here</a>**.
 
 
-### Credits
+## Credits
 
 * To the reddit community of <a href="https://www.reddit.com/r/unixporn/">r/unixporn.</a>
 * To the Arch Linux group (Telegram.
