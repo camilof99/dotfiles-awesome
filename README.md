@@ -94,7 +94,9 @@
   * Later:
 ```
   cd .config/awesome/scripts
+  
   ./generate-colors.sh
+  
   Later keyboard ctrl + r
 ```
 
