@@ -67,7 +67,7 @@
 * Neofetch~/.fonts or ~/.local/share/fonts
   * Download zip Hack Nerd Font <a href="https://www.nerdfonts.com/font-downloads">here</a>
   ```
-  cp Hack.zip ~/.fonts or ~/.local/share/fonts~/.fonts or ~/.local/share/fonts
+  cp Hack.zip ~/.fonts or ~/.local/share/fonts
   cd ~/.fonts or ~/.local/share/fonts
   unzip Hack.zip
   rm Hack.zip
