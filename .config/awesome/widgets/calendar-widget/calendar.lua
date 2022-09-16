@@ -23,7 +23,7 @@ local function worker(user_args)
 
     local calendar_themes = {
         default = {
-            bg = '#061A23',
+            bg = '#000000',
             fg = '#D8DEE9',
             focus_date_bg = colors.color4,
             focus_date_fg = colors.color0,
@@ -102,7 +102,7 @@ local function worker(user_args)
             preset = naughty.config.presets.critical,
             title = 'Calendar Widget',
             text = 'Theme "' .. args.theme .. '" not found, fallback to default'})
-        args.theme = 'naughty'
+        args.theme = 'default'
     end
 
     local theme = args.theme or 'default'
@@ -120,7 +120,7 @@ local function worker(user_args)
     end
 
     styles.month = {
-        padding = 5,
+        padding = 4,
         bg_color = calendar_themes[theme].bg,
         border_width = 0,
     }
@@ -179,7 +179,7 @@ local function worker(user_args)
                     halign = 'center',
                     widget = wibox.container.place
                 },
-                margins = (props.padding or 6) + (props.border_width or 0),
+                margins = (props.padding or 5) + (props.border_width or 0),
                 widget = wibox.container.margin
             },
             shape = props.shape,
@@ -195,7 +195,7 @@ local function worker(user_args)
 
     local cal = wibox.widget {
         date = os.date('*t'),
-        font = beautiful.get_font(),
+        font = 'HackNerdFont 9',
         fn_embed = decorate_cell,
         long_weekdays = true,
         start_sunday = start_sunday,

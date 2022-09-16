@@ -18,13 +18,13 @@ window {
     fullscreen:                  false;
     width:                       400;
     x-offset:                    12px;
-    y-offset:                    -93px;
+    y-offset:                    -138px;
 
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      2px solid;
-    border-radius:               10px;
+    border:                      1px solid;
+    border-radius:               8px;
     border-color:                @selected;
     background-color:            black / 50%;
     cursor:                      "default";
@@ -33,7 +33,7 @@ window {
 /*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
+    spacing:                     15px;
     margin:                      0px;
     padding:                     20px;
     border:                      0px solid;
@@ -91,7 +91,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
 
-    spacing:                     5px;
+    spacing:                     2px;
     margin:                      0px;
     padding:                     0px;
     border:                      0px solid;
@@ -111,9 +111,9 @@ scrollbar {
 /*****----- Elements -----*****/
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     5px;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     8px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
@@ -128,7 +128,7 @@ element normal.normal {
 }
 element selected.normal {
     border:                      0px 0px 2px 0px;
-    border-radius:               10px;
+    border-radius:               8px;
     border-color:                @selected;
     background-color:            @background-alt;
     text-color:                  @foreground;
@@ -136,7 +136,7 @@ element selected.normal {
 element-icon {
     background-color:            transparent;
     text-color:                  inherit;
-    size:                        40px;
+    size:                        30px;
     cursor:                      inherit;
 }
 element-text {
@@ -150,7 +150,7 @@ element-text {
 
 /*****----- Message -----*****/
 error-message {
-    padding:                     20px;
+    padding:                     50px;
     border:                      0px solid;
     border-radius:               0px;
     border-color:                @selected;
