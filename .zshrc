@@ -120,3 +120,5 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 # PYWAL
 (cat ~/.cache/wal/sequences &)
 cat ~/.cache/wal/sequences
+
+export PATH=~/.npm-global/bin:$PATH

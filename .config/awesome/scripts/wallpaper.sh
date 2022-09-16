@@ -9,4 +9,4 @@ NITIMG=$(eval "$IMG")
 
 wal -i $NITIMG
 
-./generate-colors.py
+./generate-colors.sh

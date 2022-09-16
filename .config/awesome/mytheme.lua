@@ -16,7 +16,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "HackNerdFont 8"
+theme.font          = "CascadiaCode 8"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
@@ -44,8 +44,8 @@ theme.taglist_fg_occupied = colors.color5
 theme.taglist_fg_urgent   = "#ED7572"
 theme.taglist_fg_empty    = colors.color1
 theme.taglist_spacing     = 3
-theme.taglist_font = "HackNerdFont 10 25"
-theme.tasklist_font = "HackNerdFont 7"
+theme.taglist_font = "CascadiaCode 10 25"
+theme.tasklist_font = "CascadiaCode 7"
 theme.taglist_bg_focus    = colors.color4
 theme.tasklist_bg_focus    = colors.color4
 
