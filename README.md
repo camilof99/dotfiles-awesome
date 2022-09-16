@@ -1,6 +1,7 @@
 ## Mi actual desktop
 <div>
   <img src="https://github.com/camilof99/dotfiles-awesome/blob/master/desktop.png" width="100%">
+  <img src="https://github.com/camilof99/dotfiles-awesome/blob/master/desktop1.png" width="100%">
 </div>
 
 ## My rice :3
