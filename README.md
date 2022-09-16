@@ -99,7 +99,7 @@
 ```
   cd .config/awesome/scripts
   
-  ./generate-colors.sh
+  ./wallpaper.sh
   
   Later keyboard ctrl + r
 ```
