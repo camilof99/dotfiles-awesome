@@ -43,6 +43,7 @@
   sudo su
   mkdir zsh-sudo
   chown 'youUser' zsh-sudo/
+  cd zsh-sudo
   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
   ```
 * Rofi (Credits to <a href="https://github.com/adi1090x/rofi">adi1090x</a>  for the theme)
@@ -66,8 +67,10 @@
 * Neofetch~/.fonts or ~/.local/share/fonts
   * Download zip Hack Nerd Font <a href="https://www.nerdfonts.com/font-downloads">here</a>
   ```
+  cp Hack.zip ~/.fonts or ~/.local/share/fonts~/.fonts or ~/.local/share/fonts
+  cd ~/.fonts or ~/.local/share/fonts
   unzip Hack.zip
-  cp Hack.zip ~/.fonts or ~/.local/share/fonts
+  rm Hack.zip
   fc-cache -fv
   ```
  
