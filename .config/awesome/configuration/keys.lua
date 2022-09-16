@@ -7,6 +7,17 @@ local ruled = require("ruled")
 
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local cw = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    start_sunday = false,
+    radius = 8,
+-- with customized next/previous (see table above)
+    previous_month_button = 1,
+    next_month_button = 3,
+})
+
 require("awful.hotkeys_popup.keys")
 
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
@@ -94,6 +105,10 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "f", function()
         awful.spawn(apps.default.file_manager)
     end, { description = "File Manager", group = "launcher" }),
+
+    awful.key({ modkey }, "c", function()
+        cw.toggle()
+    end, { description = "Show/Hide Calendar", group = "launcher" }),
 
     -- Hide wibar 5
     awful.key({ modkey }, "b", function ()

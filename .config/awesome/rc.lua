@@ -9,13 +9,23 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
-
 local xcolors = require("scripts/colors")
 local colors = xcolors.get_current_theme()
 
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
+
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local cw = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    start_sunday = false,
+    radius = 8,
+-- with customized next/previous (see table above)
+    previous_month_button = 1,
+    next_month_button = 3,
+})
 
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
@@ -211,6 +221,11 @@ screen.connect_signal("request::desktop_decoration", function(s)
         valign = "center",
         widget = wibox.widget.textclock,
     })
+
+    clock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
     local container5 =
         wibox.widget {
