@@ -16,9 +16,9 @@ local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 
-local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local calendar_widget = require("widgets.calendar-widget.calendar")
 local cw = calendar_widget({
-    theme = 'nord',
+    theme = 'default',
     placement = 'top_right',
     start_sunday = false,
     radius = 8,
@@ -167,7 +167,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         end,
         bg = colors.color4,
         fg = colors.color0,
-        --fg = "#49B265",
         border_width = (2),
         border_color = '#1b1d2488',
         forced_width = 158

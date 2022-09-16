@@ -7,9 +7,9 @@ local ruled = require("ruled")
 
 local logout_popup = require("awesome-wm-widgets.logout-popup-widget.logout-popup")
 
-local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local calendar_widget = require("widgets.calendar-widget.calendar")
 local cw = calendar_widget({
-    theme = 'nord',
+    theme = 'defaultcalendar_themes[theme].bgcalendar_themes[theme].bg',
     placement = 'top_right',
     start_sunday = false,
     radius = 8,
