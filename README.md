@@ -101,7 +101,7 @@
   
   ./wallpaper.sh
   
-  Later keyboard ctrl + r
+  Later keyboard super + ctrl + r
 ```
 
 * To see the keyboard shortcuts press super + s // Feel free to change them
