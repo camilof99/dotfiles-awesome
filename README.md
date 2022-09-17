@@ -46,7 +46,7 @@
   cd zsh-sudo
   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
   ```
-* Rofi (Credits to <a href="https://github.com/adi1090x/rofi">adi1090x</a>  for the theme)
+* Rofi
   ```
   sudo pacman -S rofi
   ```
@@ -111,7 +111,8 @@
 ***If there are errors, report them <a href="https://t.me/Ca_milo99">here</a>.***
 
 
-## Credits
-
+## Credits 
+* Credits to <a href="https://github.com/rxyhn">rxyhn</a> for inspiration.
+* Credits to <a href="https://github.com/adi1090x/rofi">adi1090x</a>  for the base of rofi.
 * To the reddit community of <a href="https://www.reddit.com/r/unixporn/">r/unixporn.</a>
 * To the Arch Linux group (Telegram).
