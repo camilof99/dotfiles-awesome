@@ -119,7 +119,30 @@ awful.keyboard.append_global_keybindings({
             end
        end
     end,
-    { description = "Ocultar apps segundo plano.", group = "awesome" }),
+    { description = "Ocultar barra apps segundo plano.", group = "awesome" }),
+
+    -- Hide wibar 5
+    awful.key({ modkey }, "h", function ()
+        for s in screen do
+            if s.mywibox0.visible == true then
+                s.mywibox4.visible = not s.mywibox4.visible
+                s.mywibox3.visible = not s.mywibox3.visible
+                s.mywibox2.visible = not s.mywibox2.visible
+                s.mywibox1.visible = not s.mywibox1.visible
+                s.mywibox0.visible = not s.mywibox0.visible
+            else
+                s.mywibox0.visible = not s.mywibox0.visible
+                s.mywibox1.visible = not s.mywibox1.visible
+                s.mywibox2.visible = not s.mywibox2.visible
+                s.mywibox3.visible = not s.mywibox3.visible
+                s.mywibox4.visible = not s.mywibox4.visible
+            end
+            if s.mybottomwibox then
+                s.mybottomwibox.visible = not s.mybottomwibox.visible
+            end
+       end
+    end,
+    { description = "Ocultar wibar", group = "awesome" }),
 
 })
 
