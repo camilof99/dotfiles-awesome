@@ -122,7 +122,7 @@ awful.keyboard.append_global_keybindings({
     { description = "Ocultar barra apps segundo plano.", group = "awesome" }),
 
     -- Hide wibar 5
-    awful.key({ modkey, "Shift" }, "h", function ()
+    awful.key({ modkey, "Shift" }, "b", function ()
         for s in screen do
             if s.mywibox0.visible == true then
                 s.mywibox4.visible = not s.mywibox4.visible
