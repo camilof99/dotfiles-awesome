@@ -114,9 +114,6 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "b", function ()
         for s in screen do
             s.mywibox5.visible = not s.mywibox5.visible
-            if s.mybottomwibox then
-                s.mybottomwibox.visible = not s.mybottomwibox.visible
-            end
        end
     end,
     { description = "Ocultar barra apps segundo plano.", group = "awesome" }),
@@ -125,6 +122,9 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, "Shift" }, "b", function ()
         for s in screen do
             if s.mywibox0.visible == true then
+                if s.mywibox5.visible == true then
+                    s.mywibox5.visible = not s.mywibox5.visible
+                end
                 s.mywibox4.visible = not s.mywibox4.visible
                 s.mywibox3.visible = not s.mywibox3.visible
                 s.mywibox2.visible = not s.mywibox2.visible
@@ -137,12 +137,9 @@ awful.keyboard.append_global_keybindings({
                 s.mywibox3.visible = not s.mywibox3.visible
                 s.mywibox4.visible = not s.mywibox4.visible
             end
-            if s.mybottomwibox then
-                s.mybottomwibox.visible = not s.mybottomwibox.visible
-            end
        end
     end,
-    { description = "Ocultar wibar", group = "awesome" }),
+    { description = "Hide wibar", group = "awesome" }),
 
 })
 
