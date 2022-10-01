@@ -179,7 +179,7 @@ local function worker(user_args)
                     halign = 'center',
                     widget = wibox.container.place
                 },
-                margins = (props.padding or 5) + (props.border_width or 0),
+                margins = (props.padding or 2) + (props.border_width or 0),
                 widget = wibox.container.margin
             },
             shape = props.shape,
@@ -195,7 +195,7 @@ local function worker(user_args)
 
     local cal = wibox.widget {
         date = os.date('*t'),
-        font = 'HackNerdFont 9',
+        font = 'CascadiaCode 10',
         fn_embed = decorate_cell,
         long_weekdays = true,
         start_sunday = start_sunday,
