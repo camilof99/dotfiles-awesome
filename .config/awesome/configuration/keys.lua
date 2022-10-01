@@ -106,6 +106,10 @@ awful.keyboard.append_global_keybindings({
         awful.spawn(apps.default.file_manager)
     end, { description = "File Manager", group = "launcher" }),
 
+    awful.key({ modkey }, "u", function()
+        awful.spawn(apps.default.music_player)
+    end, { description = "Open music", group = "launcher" }),
+
     awful.key({ modkey }, "c", function()
         cw.toggle()
     end, { description = "Show/Hide Calendar", group = "launcher" }),
