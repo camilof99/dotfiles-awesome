@@ -34,11 +34,9 @@ naughty.connect_signal("request::display_error", function(message, startup)
         message = message
     }
 end)
--- }}}
-
 
 -- Credits forum reddit...
-awesome.connect_signal('exit', function(reason_restart)
+--[[ awesome.connect_signal('exit', function(reason_restart)
     if not reason_restart then return end
  
     local file = io.open('/tmp/awesomewm-last-selected-tags', 'w+')
@@ -48,9 +46,9 @@ awesome.connect_signal('exit', function(reason_restart)
     end
  
     file:close()
- end)
+ end) ]]
  
-awesome.connect_signal('startup', function()
+--[[ awesome.connect_signal('startup', function()
     local file = io.open('/tmp/awesomewm-last-selected-tags', 'r')
     if not file then return end
  
@@ -67,7 +65,7 @@ awesome.connect_signal('startup', function()
     end
  
     file:close()
- end)
+ end) ]]
 
 --beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.init(gears.filesystem.get_configuration_dir() .. "mytheme.lua")
@@ -82,9 +80,9 @@ tag.connect_signal("request::default_layouts", function()
     awful.layout.append_default_layouts({
         awful.layout.suit.tile,
         awful.layout.suit.floating,
-        awful.layout.suit.tile.left,
+        -- awful.layout.suit.tile.left,
         -- awful.layout.suit.tile.bottom,
-        -- awful.layout.suit.tile.top,
+        awful.layout.suit.tile.top,
         awful.layout.suit.fair,
         -- awful.layout.suit.fair.horizontal,
         awful.layout.suit.spiral,
@@ -120,6 +118,7 @@ mytextclock = wibox.widget.textclock()
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
+
     awful.tag({ "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
@@ -438,7 +437,17 @@ screen.connect_signal("request::desktop_decoration", function(s)
     }
 end)
 
--- }}}
+client.connect_signal("manage",
+    function(c)
+        if c.first_tag.index == 7 then
+            c.floating = true
+            c.width = 680
+            c.height = 440
+            c.x = 650
+            c.y = 300
+        end
+    end
+)
 
 -- {{{ Key bindings
 -- General Awesome keys

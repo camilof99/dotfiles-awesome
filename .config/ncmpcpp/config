@@ -8,6 +8,9 @@ mpd_port = "6600"
 mpd_connection_timeout = "5"
 mpd_crossfade_time = "5"
 
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30" 
+visualizer_in_stereo = "yes"
 visualizer_type = spectrum
 visualizer_look = "◆▋"
 visualizer_color = red, cyan, white, green, yellow, magenta, blue, red, cyan, white,green, yellow, magenta, blue
@@ -15,8 +18,8 @@ visualizer_color = red, cyan, white, green, yellow, magenta, blue, red, cyan, wh
 autocenter_mode = "yes"
 centered_cursor = "yes"
 user_interface = "alternative"
+current_item_prefix = ->
 
-current_item_prefix = red
 header_window_color = white
 volume_color = yellow
 state_line_color = green
@@ -24,7 +27,7 @@ state_flags_color = yellow
 progressbar_color = magenta
 statusbar_color = blue
 
-song_columns_list_format = (20)[]{a} (6f)[red]{NE} (50)[cyan]{t|f:Title} (20)[white]{b} (7f)[green]{l}
+song_columns_list_format = (6f)[red]{NE} (50)[white]{t|f:Title} (15)[]{a} (20)[cyan]{b} (7f)[green]{l}
 
 startup_slave_screen = "visualizer"
 

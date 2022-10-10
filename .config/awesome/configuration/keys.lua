@@ -23,15 +23,6 @@ require("awful.hotkeys_popup.keys")
 local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 local apps = require("configuration.apps")
 
-client.connect_signal(
-  "manage",
-  function(c)
-      if c.first_tag.index == 7 then
-        c.floating = true
-      end
-  end
-)
-
 awful.keyboard.append_global_keybindings({
 
     --- Music
@@ -367,7 +358,7 @@ ruled.client.connect_signal("request::rules", function()
     }
 
     -- Floating clients.
-    ruled.client.append_rule {
+  --[[   ruled.client.append_rule {
         id       = "floating",
         rule_any = {
             instance = { "copyq", "pinentry" },
@@ -387,7 +378,7 @@ ruled.client.connect_signal("request::rules", function()
             }
         },
         properties = { floating = true }
-    }
+    } ]]
 
     -- Add titlebars to normal clients and dialogs
     ruled.client.append_rule {
@@ -395,15 +386,6 @@ ruled.client.connect_signal("request::rules", function()
         rule_any   = { type = { "normal", "dialog" } },
         properties = { titlebars_enabled = true      }
     }
-
-    --ruled.client.append_rule {
-    --    rule_any    = {
-    --        class = {apps.default.terminal}
-    --    },
-    --    properties = {
-    --        tag = screen[1].tags[2],
-    --    },
-    --}
 
 end)
 
