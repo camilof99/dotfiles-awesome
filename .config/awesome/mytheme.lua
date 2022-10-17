@@ -30,7 +30,7 @@ theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
 theme.useless_gap         = dpi(6)
-theme.border_width        = dpi(2)
+theme.border_width        = dpi(1)
 theme.border_radius = dpi(10)
 theme.client_radius = theme.border_radius
 theme.dashboard_radius = theme.border_radius

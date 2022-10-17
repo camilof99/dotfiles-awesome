@@ -71,7 +71,7 @@ truncation_symbol = "…/"
 [c]
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [docker_context]
 symbol = " "
@@ -81,12 +81,12 @@ format = '[ $symbol $context ]($style) $path'
 [elixir]
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [elm]
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [git_branch]
 symbol = ""
@@ -110,17 +110,17 @@ format = '[ $symbol ($version) ]($style)'
 [java]
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [julia]
 symbol = " "
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [nodejs]
 symbol = ""
 style = "bg:#86BBD8 fg:#000000"
-format = '[ $symbol ($version) ]($style)'
+format = '[ $symbol ]($style)'
 
 [nim]
 symbol = " "

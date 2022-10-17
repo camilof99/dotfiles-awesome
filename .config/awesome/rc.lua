@@ -35,6 +35,26 @@ naughty.connect_signal("request::display_error", function(message, startup)
     }
 end)
 
+-- {{{ Wallpaper
+screen.connect_signal("request::wallpaper", function(s)
+    awful.wallpaper {
+        screen = s,
+        widget = {
+            {
+                image     = beautiful.wallpaper,
+                upscale   = true,
+                downscale = true,
+                widget    = wibox.widget.imagebox,
+            },
+            valign = "center",
+            halign = "center",
+            tiled  = false,
+            widget = wibox.container.tile,
+        }
+    }
+end)
+-- }}}
+
 -- Credits forum reddit...
 --[[ awesome.connect_signal('exit', function(reason_restart)
     if not reason_restart then return end
