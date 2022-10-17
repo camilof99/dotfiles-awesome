@@ -81,7 +81,7 @@
  ```
   cd dotfiles-awesome
   cp .zshrc /home/'youUser'
-  cp -r config/* ~/.config/
+  cp -r .config/* ~/.config/
  ```
  ```
   cd .config/awesome
