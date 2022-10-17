@@ -25,6 +25,10 @@
   ```
   paru -S picom-ibhagwan-git
   ```
+* Pywal
+  ```
+  paru -S pywal
+  ```
 * Kitty
   ```
   paru -S kitty
