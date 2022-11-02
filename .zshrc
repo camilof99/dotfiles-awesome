@@ -3,18 +3,12 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
 
-setopt histignorealldups sharehistory
-
-bindkey -e
-
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 autoload -Uz compinit
 compinit
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 plugins=(
 		git
